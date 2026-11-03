@@ -1,0 +1,73 @@
+{
+  "meta": { "title": "Abdulroqeeb Ibrahim | Junior Full-Stack Developer" },
+  "nav": { "brand": "Abdulroqeeb" },
+  "hero": {
+    "name": "Abdulroqeeb Ibrahim",
+    "role": "IT support specialist to full-stack developer · Doha, Qatar",
+    "open": "Open to work",
+    "intro": "I started by fixing real problems for real users, and now I build the tools that make support easier. React, Node.js, and PostgreSQL, with Arabic and English support.",
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV"
+  },
+  "stack": {
+    "title": "Stack",
+    "build": "BUILD",
+    "support": "SUPPORT",
+    "supportItems": [
+      "Windows and Microsoft 365",
+      "Active Directory",
+      "Networking",
+      "Helpdesk ticketing",
+      "POS, CCTV and telephony"
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "featured": "FEATURED",
+    "live": "Live demo",
+    "code": "Code",
+    "also": "Also built with HTML, CSS, and JavaScript: News Homepage, Conference Ticket Generator, Age Calculator, Calculator, Color Game.",
+    "items": {
+      "quickdesk": "IT helpdesk ticketing system with role-based access, comments, search, and Arabic/English RTL support.",
+      "todo": "Full-stack task manager with an Express API and PostgreSQL storage.",
+      "contact": "Validated form that submits to an Express API and stores entries in MongoDB Atlas.",
+      "orderuk": "Mobile-first food delivery interface built from Figma designs."
+    }
+  },
+  "journey": {
+    "title": "Journey",
+    "items": [
+      {
+        "year": "2023",
+        "text": "IT support intern in Dubai: Active Directory, backups, and hardware diagnostics."
+      },
+      {
+        "year": "2025",
+        "text": "IT support and infrastructure technician in Doha: POS, CCTV, telephony, and networks."
+      },
+      {
+        "year": "2026",
+        "text": "IT support specialist and systems administrator, and builder of QuickDesk."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "cvDev": "Developer CV (PDF, English)",
+    "cvIt": "IT support CV (PDF, English)"
+  },
+  "outline": {
+    "title": "ON THIS PAGE",
+    "stack": "Stack",
+    "projects": "Projects",
+    "journey": "Journey",
+    "contact": "Contact"
+  },
+  "footer": { "rights": "© {{year}} Abdulroqeeb Ibrahim" },
+  "common": {
+    "switchLang": "العربية",
+    "dark": "Dark",
+    "light": "Light",
+    "toggleTheme": "Toggle theme"
+  }
+}
