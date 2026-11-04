@@ -367,3 +367,179 @@ h3 {
     padding-inline: 20px;
   }
 }
+/* ---------- About, credentials ---------- */
+.about-text {
+  max-width: 680px;
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.now {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-block-start: 24px;
+  color: var(--muted);
+  font-size: 15px;
+}
+.cred-name {
+  font-size: 1.1rem;
+}
+
+/* ---------- Motion ---------- */
+body {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+.hero > * {
+  animation: rise 0.7s ease both;
+}
+.hero > :nth-child(2) {
+  animation-delay: 0.08s;
+}
+.hero > :nth-child(3) {
+  animation-delay: 0.16s;
+}
+.hero > :nth-child(4) {
+  animation-delay: 0.24s;
+}
+.hero > :nth-child(5) {
+  animation-delay: 0.32s;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.banner path {
+  stroke-dasharray: 6 8;
+  animation: flow 24s linear infinite;
+}
+@keyframes flow {
+  to {
+    stroke-dashoffset: -280;
+  }
+}
+.banner circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 3.2s ease-in-out infinite;
+}
+.banner circle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.banner circle:nth-child(3) {
+  animation-delay: 1s;
+}
+.banner circle:nth-child(4) {
+  animation-delay: 1.5s;
+}
+.banner circle:nth-child(5) {
+  animation-delay: 2s;
+}
+.banner circle:nth-child(6) {
+  animation-delay: 2.5s;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.7);
+    opacity: 0.5;
+  }
+}
+
+.card {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+.chip {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+.chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.btn {
+  transition:
+    transform 0.15s ease,
+    border-color 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: none;
+}
+
+.chip-live::before {
+  animation: live 2s ease-in-out infinite;
+}
+@keyframes live {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 195, 138, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(76, 195, 138, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero > *,
+  .banner path,
+  .banner circle,
+  .chip-live::before {
+    animation: none;
+  }
+  .card,
+  .chip,
+  .btn {
+    transition: none;
+  }
+  .card:hover,
+  .chip:hover,
+  .btn:hover {
+    transform: none;
+  }
+}

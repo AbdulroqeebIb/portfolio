@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSettings } from "./context/SettingsContext";
 import {
   build,
   projects,
   EMAIL,
+  PHONE,
+  PHONE_LINK,
   LINKEDIN,
   GITHUB,
   CV_DEV,
@@ -19,6 +21,28 @@ const NODES = [
   [980, 140],
   [1200, 60],
 ];
+
+function useReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach((el) => el.classList.add("in"));
+      return undefined;
+    }
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.12 },
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+}
 
 function Banner() {
   const { t } = useTranslation();
@@ -89,11 +113,34 @@ function Hero() {
   );
 }
 
+function About() {
+  const { t } = useTranslation();
+  const cards = t("about.cards", { returnObjects: true });
+  return (
+    <section id="about" className="sec reveal">
+      <h2>{t("about.title")}</h2>
+      <p className="about-text">{t("about.text")}</p>
+      <div className="cards">
+        {cards.map((c) => (
+          <article className="card" key={c.title}>
+            <h3>{c.title}</h3>
+            <p className="desc">{c.text}</p>
+          </article>
+        ))}
+      </div>
+      <p className="now">
+        <span className="chip chip-live">{t("about.nowLabel")}</span>{" "}
+        {t("about.now")}
+      </p>
+    </section>
+  );
+}
+
 function Stack() {
   const { t } = useTranslation();
   const support = t("stack.supportItems", { returnObjects: true });
   return (
-    <section id="stack" className="sec">
+    <section id="stack" className="sec reveal">
       <h2>{t("stack.title")}</h2>
       <p className="label">{t("stack.build")}</p>
       <div className="chips">
@@ -161,7 +208,7 @@ function Projects() {
   const { t } = useTranslation();
   const [first, ...rest] = projects;
   return (
-    <section id="projects" className="sec">
+    <section id="projects" className="sec reveal">
       <h2>{t("projects.title")}</h2>
       <article className="card featured">
         <Shot id={first.id} name={first.name} />
@@ -193,7 +240,7 @@ function Journey() {
   const { t } = useTranslation();
   const items = t("journey.items", { returnObjects: true });
   return (
-    <section id="journey" className="sec">
+    <section id="journey" className="sec reveal">
       <h2>{t("journey.title")}</h2>
       {items.map((item) => (
         <div className="step" key={item.year}>
@@ -205,14 +252,36 @@ function Journey() {
   );
 }
 
+function Credentials() {
+  const { t } = useTranslation();
+  const items = t("credentials.items", { returnObjects: true });
+  return (
+    <section id="credentials" className="sec reveal">
+      <h2>{t("credentials.title")}</h2>
+      <div className="cards">
+        {items.map((c) => (
+          <article className="card" key={c.name}>
+            <p className="label">{c.kind}</p>
+            <h3 className="cred-name">{c.name}</h3>
+            {c.org && <p className="desc">{c.org}</p>}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   const { t } = useTranslation();
   return (
-    <section id="contact" className="sec contact">
+    <section id="contact" className="sec contact reveal">
       <h2>{t("contact.title")}</h2>
       <p className="links">
         <a className="link" dir="ltr" href={`mailto:${EMAIL}`}>
           {EMAIL}
+        </a>
+        <a className="link" dir="ltr" href={`tel:${PHONE_LINK}`}>
+          {PHONE}
         </a>
         <a className="link" href={LINKEDIN} target="_blank" rel="noreferrer">
           LinkedIn ↗
@@ -241,24 +310,29 @@ function Outline() {
   return (
     <aside className="outline">
       <p className="label">{t("outline.title")}</p>
+      <a href="#about">{t("outline.about")}</a>
       <a href="#stack">{t("outline.stack")}</a>
       <a href="#projects">{t("outline.projects")}</a>
       <a href="#journey">{t("outline.journey")}</a>
+      <a href="#credentials">{t("outline.credentials")}</a>
       <a href="#contact">{t("outline.contact")}</a>
     </aside>
   );
 }
 
 export default function App() {
+  useReveal();
   return (
     <>
       <Banner />
       <div className="layout">
         <main>
           <Hero />
+          <About />
           <Stack />
           <Projects />
           <Journey />
+          <Credentials />
           <Contact />
         </main>
         <Outline />

@@ -1,6 +1,8 @@
 export const EMAIL = "abdulroqeebibrahim@gmail.com";
 export const LINKEDIN = "https://linkedin.com/in/abdulroqeeb-ibrahim";
 export const GITHUB = "https://github.com/AbdulroqeebIb";
+export const PHONE = "+974 3371 5572";
+export const PHONE_LINK = "+97433715572";
 export const CV_DEV =
   "/cv/Abdulroqeeb_Ibrahim_Junior_FullStack_Developer_CV.pdf";
 export const CV_IT = "/cv/Abdulroqeeb_Ibrahim_IT_Support_CV.pdf";
@@ -40,11 +42,20 @@ export const projects = [
     live: "",
     code: "",
   },
+  // {
+  //   id: "orderuk",
+  //   name: "Order UK",
+  //   tags: ["React", "CSS"],
+  //   live: "",
+  //   code: "",
+  // },
   {
-    id: "orderuk",
-    name: "Order UK",
-    tags: ["React", "CSS"],
-    live: "",
+    id: "tickets",
+    name: "Ticket Generator",
+    description:
+      "Interactive conference ticket generator with custom form validation and dynamic card output.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    live: "https://ticket-generator-prj.vercel.app",
     code: "",
   },
 ];

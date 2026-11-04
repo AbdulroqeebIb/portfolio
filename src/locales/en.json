@@ -9,6 +9,26 @@
     "viewProjects": "View projects",
     "downloadCv": "Download CV"
   },
+  "about": {
+    "title": "About me",
+    "text": "I’m an IT support specialist who fell in love with building software. After supporting real users in Doha and Dubai, I started building the tools I wish they'd had. I love technology, and my ultimate goal is to build AI applications.",
+    "cards": [
+      {
+        "title": "I explain things simply",
+        "text": "I turn technical problems into plain language, so people understand what's wrong and what happens next."
+      },
+      {
+        "title": "I learn by building",
+        "text": "Every project here started as something I wanted to understand. QuickDesk taught me authentication, roles, deployment, and Arabic right-to-left layouts."
+      },
+      {
+        "title": "I show up",
+        "text": "I go to tech events in Doha to meet builders, ask questions, and learn what teams actually need."
+      }
+    ],
+    "nowLabel": "Up next",
+    "now": "Adding an AI assistant and screenshot uploads to QuickDesk."
+  },
   "stack": {
     "title": "Stack",
     "build": "BUILD",
@@ -26,12 +46,13 @@
     "featured": "FEATURED",
     "live": "Live demo",
     "code": "Code",
-    "also": "Also built with HTML, CSS, and JavaScript: News Homepage, Conference Ticket Generator, Age Calculator, Calculator, Color Game.",
+    "also": "Also built with HTML, CSS, and JavaScript: News Homepage, Age Calculator, Calculator, Color Game. In progress: Order UK, a mobile-first React app.",
     "items": {
       "quickdesk": "IT helpdesk ticketing system with role-based access, comments, search, and Arabic/English RTL support.",
       "todo": "Full-stack task manager with an Express API and PostgreSQL storage.",
       "contact": "Validated form that submits to an Express API and stores entries in MongoDB Atlas.",
-      "orderuk": "Mobile-first food delivery interface built from Figma designs."
+      "orderuk": "Mobile-first food delivery interface built from Figma designs.",
+      "tickets": "Conference ticket generator with drag-and-drop avatar upload, form validation, and a personalised ticket."
     }
   },
   "journey": {
@@ -51,6 +72,36 @@
       }
     ]
   },
+  "credentials": {
+    "title": "Certifications and education",
+    "items": [
+      {
+        "kind": "DEGREE",
+        "name": "B.Sc. Information Technology",
+        "org": "Kwara State University · 2020–2024"
+      },
+      {
+        "kind": "CERTIFICATION",
+        "name": "Web Development",
+        "org": "Mayovest Consultancy Services · 2024"
+      },
+      {
+        "kind": "CERTIFICATION",
+        "name": "Backend Development",
+        "org": "Nupe Tech Community · 2025"
+      },
+      {
+        "kind": "CERTIFICATION",
+        "name": "Professional Software Development and Client Communication",
+        "org": ""
+      },
+      {
+        "kind": "DIPLOMA",
+        "name": "Computer Engineering Diploma",
+        "org": "Zeetech College of Computer · 2018"
+      }
+    ]
+  },
   "contact": {
     "title": "Contact",
     "cvDev": "Developer CV (PDF, English)",
@@ -58,9 +109,11 @@
   },
   "outline": {
     "title": "ON THIS PAGE",
+    "about": "About",
     "stack": "Stack",
     "projects": "Projects",
     "journey": "Journey",
+    "credentials": "Certifications",
     "contact": "Contact"
   },
   "footer": { "rights": "© {{year}} Abdulroqeeb Ibrahim" },
